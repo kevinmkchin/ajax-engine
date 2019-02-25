@@ -5,7 +5,7 @@
 
 0: vertices
 
-1: index buffers
+Each VAO has a special slot for the index buffer (not part of attribute array).
 
 #### Item Data
 
