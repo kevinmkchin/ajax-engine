@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2579c25f-5a92-49c4-b9cb-de9ef1d957be" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/renderEngine/ModelLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderEngine/ModelRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderEngine/RawModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ajax-engine/engineTest/MainGameLoop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ajax-engine/engineTest/MainGameLoop.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ajax-engine/renderEngine/DisplayManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ajax-engine/renderEngine/DisplayManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ajax-engine/renderEngine/ModelLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ajax-engine/renderEngine/ModelLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ajax-engine/renderEngine/ModelRenderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ajax-engine/renderEngine/ModelRenderer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/engineTest/MainGameLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineTest/MainGameLoop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderEngine/DisplayManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderEngine/DisplayManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderEngine/ModelLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderEngine/ModelLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderEngine/ModelRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderEngine/ModelRenderer.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,7 +36,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/renderEngine/DisplayManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-334">
+            <state relative-caret-position="18">
               <caret line="10" column="56" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -56,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/renderEngine/ModelLoader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="21" lean-forward="true" selection-start-column="21" selection-end-column="21" />
+            <state relative-caret-position="146">
+              <caret line="64" column="103" selection-start-line="64" selection-start-column="103" selection-end-line="64" selection-end-column="103" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#688#689#0" expanded="true" />
@@ -70,11 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/renderEngine/ModelRenderer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+            <state relative-caret-position="280">
+              <caret line="14" column="42" lean-forward="true" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -83,10 +83,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="140">
+                <caret line="7" column="49" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/engineTest/MainGameLoop.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="33" column="35" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
+            <state relative-caret-position="846">
+              <caret line="49" column="1" lean-forward="true" selection-start-line="49" selection-start-column="1" selection-end-line="49" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -111,9 +123,10 @@
       <list>
         <option value="$PROJECT_DIR$/src/renderEngine/DisplayManager.java" />
         <option value="$PROJECT_DIR$/src/renderEngine/RawModel.java" />
-        <option value="$PROJECT_DIR$/src/renderEngine/ModelLoader.java" />
-        <option value="$PROJECT_DIR$/src/engineTest/MainGameLoop.java" />
         <option value="$PROJECT_DIR$/src/renderEngine/ModelRenderer.java" />
+        <option value="$PROJECT_DIR$/src/engineTest/MainGameLoop.java" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/renderEngine/ModelLoader.java" />
       </list>
     </option>
   </component>
@@ -204,12 +217,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1551057290230</updated>
-      <workItem from="1551057293058" duration="6314000" />
+      <workItem from="1551057293058" duration="8916000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6314000" />
+    <option name="totallyTimeSpent" value="8916000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -217,7 +230,7 @@
     <layout>
       <window_info id="Designer" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24966443" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966443" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="CheckStyle" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
@@ -229,7 +242,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -247,7 +260,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/renderEngine/DisplayManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-334">
+        <state relative-caret-position="18">
           <caret line="10" column="56" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -264,34 +277,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/renderEngine/ModelLoader.java">
+    <entry file="file://$PROJECT_DIR$/src/renderEngine/ModelRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="21" lean-forward="true" selection-start-column="21" selection-end-column="21" />
+        <state relative-caret-position="280">
+          <caret line="14" column="42" lean-forward="true" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#688#689#0" expanded="true" />
-            <element signature="e#729#730#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/engineTest/MainGameLoop.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="33" column="35" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
+        <state relative-caret-position="846">
+          <caret line="49" column="1" lean-forward="true" selection-start-line="49" selection-start-column="1" selection-end-line="49" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/renderEngine/ModelRenderer.java">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="140">
+            <caret line="7" column="49" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/renderEngine/ModelLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+        <state relative-caret-position="146">
+          <caret line="64" column="103" selection-start-line="64" selection-start-column="103" selection-end-line="64" selection-end-column="103" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#688#689#0" expanded="true" />
+            <element signature="e#729#730#0" expanded="true" />
           </folding>
         </state>
       </provider>
