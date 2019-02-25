@@ -3,5 +3,7 @@
 
 
 Example VAO in ajax engine:
+
 0: vertices
+
 1: index buffers
