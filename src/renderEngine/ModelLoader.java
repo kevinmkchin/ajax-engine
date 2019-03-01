@@ -1,11 +1,16 @@
 package renderEngine;
 
+import assets.models.RawModel;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL15;
 import org.lwjgl.opengl.GL20;
 import org.lwjgl.opengl.GL30;
+import org.newdawn.slick.opengl.Texture;
+import org.newdawn.slick.opengl.TextureLoader;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.util.ArrayList;
@@ -15,16 +20,31 @@ public class ModelLoader {
 
     private List<Integer> vaos = new ArrayList<>(); //list of all vaos
     private List<Integer> vbos = new ArrayList<>(); //list of all vbos
+    private List<Integer> textures = new ArrayList<>(); //list of all textures
 
     //===== Load a float array(.obj) to VAO RawModel =====
-    public RawModel loadToVAO(float[] positions, int[] indices){
+    public RawModel loadToVAO(float[] positions, float[] textureCoords, int[] indices){
         int vaoID = createVAO();
         vaos.add(vaoID);
         bindIndicesBuffer(indices);
-        storeDataInAttributeList(0, positions); //load positions VBO to index 0 of VAO
+        storeDataInAttributeList(0, 3, positions); //load positions VBO to index 0 of VAO
+        storeDataInAttributeList(1, 2, textureCoords);
         unbindVAO();
 
         return new RawModel(vaoID, indices.length);
+    }
+
+    public int loadTexture(String fileName){
+        Texture texture = null;
+        try {
+            texture = TextureLoader.getTexture("PNG", new FileInputStream("res/textures/"+fileName+".png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        int textureID = texture.getTextureID();
+        textures.add(textureID);
+
+        return textureID;
     }
 
     //clean up VAO memory at the end of the game
@@ -34,6 +54,9 @@ public class ModelLoader {
         }
         for(int vbo : vbos){
             GL15.glDeleteBuffers(vbo);
+        }
+        for(int texture : textures){
+            GL11.glDeleteTextures(texture);
         }
     }
 
@@ -46,14 +69,14 @@ public class ModelLoader {
     }
 
     //store VBO data into attribute slot of VAO
-    private void storeDataInAttributeList(int attributeNumber, float[] data){
+    private void storeDataInAttributeList(int attributeNumber, int coordinateSize ,float[] data){
         int vboID = GL15.glGenBuffers(); //generate empty VBO and return its ID
         vbos.add(vboID);
         GL15.glBindBuffer(GL15.GL_ARRAY_BUFFER, vboID); //GL_ARRAY_BUFFER specifies type is data
         FloatBuffer buffer = storeDataInFloatBuffer(data);
         GL15.glBufferData(GL15.GL_ARRAY_BUFFER, buffer, GL15.GL_STATIC_DRAW); //GL_STATIC_DRAW is the usage
 
-        GL20.glVertexAttribPointer(attributeNumber, 3, GL11.GL_FLOAT, false, 0,0);
+        GL20.glVertexAttribPointer(attributeNumber, coordinateSize, GL11.GL_FLOAT, false, 0,0);
 
         GL15.glBindBuffer(GL15.GL_ARRAY_BUFFER, 0);
     }

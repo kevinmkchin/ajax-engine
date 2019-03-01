@@ -1,4 +1,4 @@
-package renderEngine;
+package assets.models;
 
 public class RawModel { //represents a raw model data stored in memory
 
