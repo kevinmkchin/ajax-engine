@@ -2,17 +2,20 @@
 
 // THE VERTEX SHADER
 // THIS IS WHERE THE TRANSFORMATION MATRIX ACTUALLY TRANSFORMS THE MODEL
+// THIS IS WHERE THE VIEW MATRIX TRANSFORMS THE MODELS BASED ON CAMERA MOVEMENT
 
 in vec3 position;
 in vec2 textureCoords;
 
 out vec2 pass_textureCoords;
 
-uniform mat4 transformMatrix;
+uniform mat4 transformMatrix; //transform of model
+uniform mat4 projectionMatrix; //projection/perspective view camera
+uniform mat4 viewMatrix; //matrix opposite of camera movement
 
 void main(void){
 
-    gl_Position = transformMatrix * vec4(position, 1.0);
+    gl_Position = projectionMatrix * viewMatrix * transformMatrix * vec4(position, 1.0);
     pass_textureCoords = textureCoords;
 
 }
