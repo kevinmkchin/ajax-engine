@@ -23,12 +23,13 @@ public class ModelLoader {
     private List<Integer> textures = new ArrayList<>(); //list of all textures
 
     //===== Load a float array(.obj) to VAO RawModel =====
-    public RawModel loadToVAO(float[] positions, float[] textureCoords, int[] indices){
+    public RawModel loadToVAO(float[] positions, float[] textureCoords, float[] normals, int[] indices){
         int vaoID = createVAO();
         vaos.add(vaoID);
         bindIndicesBuffer(indices);
         storeDataInAttributeList(0, 3, positions); //load positions VBO to index 0 of VAO
         storeDataInAttributeList(1, 2, textureCoords);
+        storeDataInAttributeList(2, 3, normals);
         unbindVAO();
 
         return new RawModel(vaoID, indices.length);

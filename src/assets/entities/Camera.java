@@ -5,6 +5,8 @@ import org.lwjgl.util.vector.Vector3f;
 
 public class Camera {
 
+    private boolean editorMode = true;
+
     private Vector3f position = new Vector3f(0,0,0);
     private float pitch;
     private float yaw;
@@ -13,25 +15,26 @@ public class Camera {
     public void move(){
         //TODO CHANGE CAMERA MOVEMENT
         // ==== TESTING ==== WASDRF
-        if(Keyboard.isKeyDown(Keyboard.KEY_W)){
-            position.z -= 0.02f;
+        if(editorMode) {
+            if (Keyboard.isKeyDown(Keyboard.KEY_W)) {
+                position.z -= 0.02f;
+            }
+            if (Keyboard.isKeyDown(Keyboard.KEY_S)) {
+                position.z += 0.02f;
+            }
+            if (Keyboard.isKeyDown(Keyboard.KEY_A)) {
+                position.x -= 0.02f;
+            }
+            if (Keyboard.isKeyDown(Keyboard.KEY_D)) {
+                position.x += 0.02f;
+            }
+            if (Keyboard.isKeyDown(Keyboard.KEY_R)) {
+                position.y += 0.02f;
+            }
+            if (Keyboard.isKeyDown(Keyboard.KEY_F)) {
+                position.y -= 0.02f;
+            }
         }
-        if(Keyboard.isKeyDown(Keyboard.KEY_S)){
-            position.z += 0.02f;
-        }
-        if(Keyboard.isKeyDown(Keyboard.KEY_A)){
-            position.x -= 0.02f;
-        }
-        if(Keyboard.isKeyDown(Keyboard.KEY_D)){
-            position.x += 0.02f;
-        }
-        if(Keyboard.isKeyDown(Keyboard.KEY_R)){
-            position.y += 0.02f;
-        }
-        if(Keyboard.isKeyDown(Keyboard.KEY_F)){
-            position.y -= 0.02f;
-        }
-
     }
 
     public Vector3f getPosition() {
@@ -45,5 +48,11 @@ public class Camera {
     }
     public float getRoll() {
         return roll;
+    }
+    public void setEditorMode(Boolean bool){
+        this.editorMode = bool;
+    }
+    public boolean getEditorMode(){
+        return editorMode;
     }
 }

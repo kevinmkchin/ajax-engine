@@ -18,7 +18,7 @@ public class MainGameLoop {
         ModelLoader loader = new ModelLoader();
         StaticShader shader = new StaticShader();
         ModelRenderer renderer = new ModelRenderer(shader);
-        Camera camera = new Camera();
+        Camera mainCamera = new Camera();
         ///======================
 
         Scene scene = new TestScene1(loader);
@@ -26,8 +26,8 @@ public class MainGameLoop {
         while(!Display.isCloseRequested()){ //main loop with game logic, rendering, and updating display
             renderer.prepare();
             shader.start();
-            camera.move();
-            shader.loadViewMatrix(camera);
+            mainCamera.move();
+            shader.loadViewMatrix(mainCamera);
 
             //INITIALIZE SCENES HERE BY CHECKING FOR STATE CHANGE
             // for example
