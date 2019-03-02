@@ -38,7 +38,7 @@ Each scene has:
 
 1. Declare and initialize the TexturedModels
     - Call the makeModel(String, String) method to create a TexturedModel
-    - e.g. TexturedModel someModel = makeModel("someModel", "textureSomeModel");
+    - e.g. *TexturedModel someModel = makeModel("someModel", "textureSomeModel");*
     - If the .obj file is located inside a sub-folder of "/res/objs/", then the inputted model name must include the sub-folder. (e.g. instead of "mazda", input "cars/mazda") Same for textures.
 
 2. Declare and initialize the Entities
@@ -47,11 +47,11 @@ Each scene has:
     a new Vector3 of the entity's x y z position in 3d space,
     the entity's rotation around x-axis, rotation around y-axis, rotation around z-axis,
     and the scale factor.
-    - e.g. Entity someEntity1337 = new DefaultEntity(someModel, new Vector3f(10f,-3f,-30f),0,20,0,1);
+    - e.g. *Entity someEntity1337 = new DefaultEntity(someModel, new Vector3f(10f,-3f,-30f),0,20,0,1);*
 
 3. Render the Entities
     - Inside renderScene method, put a call to the render method of an instance of ModelRenderer for each Entity
-    - e.g. renderer.render(someEntity1337, shader);
+    - e.g. *renderer.render(someEntity1337, shader);*
     - Do this for each entity
 
 NOTE:
