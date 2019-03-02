@@ -1,5 +1,5 @@
 # Ajax Engine
-#### OpenGL based 3D graphics engine written in Java
+#### Entity-based OpenGL 3D graphics engine written in Java
 
 #### Example VAO in ajax engine:
 
