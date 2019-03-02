@@ -27,7 +27,6 @@ Each scene has:
 
 
 #### Collisions
-
 ##### Two Types of Collisions:
 
 - Collisions with the terrain
