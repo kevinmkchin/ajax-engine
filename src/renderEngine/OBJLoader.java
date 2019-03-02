@@ -92,7 +92,11 @@ public class OBJLoader {
             indicesArray[i] = indices.get(i);
         }
 
-        return loader.loadToVAO(verticesArray, texturesArray, indicesArray);
+        //At this point, verticesArray, texturesArray, and normalsArray all contain data matching each other's indexes
+        //verticesArray: [A, B, C, D, E]
+        //texturesArray: [A, B, C, D, E]
+        //normalsArray: [A, B, C, D, E]
+        return loader.loadToVAO(verticesArray, texturesArray, normalsArray, indicesArray);
     }
 
     //MATCH VERTEX WITH TEXTURE AND NORMAL
