@@ -1,5 +1,7 @@
 #version 400 core
 
+// THE FRAGMENT SHADER
+
 in vec2 pass_textureCoords;
 
 out vec4 out_Colour;
