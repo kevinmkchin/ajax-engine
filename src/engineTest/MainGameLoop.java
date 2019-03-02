@@ -14,11 +14,12 @@ public class MainGameLoop {
     public static void main(String[] args) {
 
         DisplayManager.createDisplay();
-
+        ///IMPORTANT GAME OBJECTS
         ModelLoader loader = new ModelLoader();
         StaticShader shader = new StaticShader();
         ModelRenderer renderer = new ModelRenderer(shader);
         Camera camera = new Camera();
+        ///======================
 
         Scene scene = new TestScene1(loader);
 
@@ -30,8 +31,9 @@ public class MainGameLoop {
 
             //INITIALIZE SCENES HERE BY CHECKING FOR STATE CHANGE
             // for example
-            // if (gameState_1) then scene = new FirstScene();
-            // if (gameState_2) then scene = new SecondScene();
+            // if (gameState_justSwitched) then
+            //     if (gameState_1) then scene = new FirstScene();
+            //     if (gameState_2) then scene = new SecondScene();
 
             // ==== testing ====
             scene.renderScene(renderer, shader);
