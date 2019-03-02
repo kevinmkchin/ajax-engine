@@ -19,6 +19,7 @@ public class Maths {
         return matrix;
     }
 
+    // CREATE VIEW MATRIX
     public static Matrix4f createViewMatrix(Camera camera){
         Matrix4f viewMatrix = new Matrix4f();
         viewMatrix.setIdentity();
