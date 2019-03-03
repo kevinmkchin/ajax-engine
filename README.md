@@ -55,9 +55,11 @@ Each scene has:
     - e.g. *Entity someEntity1337 = new DefaultEntity(someModel, new Vector3f(10f,-3f,-30f),0,20,0,1);*
 
 3. Render the Entities
-    - Inside renderScene method, put a call to the render method of an instance of ModelRenderer for each Entity
-    - e.g. *renderer.render(someEntity1337, shader);*
+    - Inside renderScene method, put a call to the process_______ Method of the MainRenderer for each Entity
+    - e.g. *renderer.processEntity(someEntity1337);*
     - Do this for each entity
+    - At the end of the renderScene method, make sure to call the MainRenderer's render method with the Camera, the light source, and ambient light factor to actually render everything.
+    - e.g. *renderer.render(camera, light1, 0.2f);*
 
 NOTE:
 - renderScene method runs every tick/frame; put methods for entities etc that should be run every tick inside renderScene.

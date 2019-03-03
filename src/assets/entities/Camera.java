@@ -8,7 +8,7 @@ public class Camera {
 
     private boolean editorMode = true;
 
-    private Vector3f position = new Vector3f(0,0,0);
+    private Vector3f position = new Vector3f(0,10,0);
     private float pitch = 0;
     private float yaw = 0;
     private float roll;
@@ -50,9 +50,9 @@ public class Camera {
                     position.y -= cameraSpeed;
                 }
             }
-
-
         }
+
+
     }
 
     //get camera position, find vector towards 0, 0 on the screen, normalize to unit vector, multiply unit vector by speed, then add that to camera position
