@@ -28,6 +28,7 @@ When initializing an entity, it takes in:\
 A Scene class stores information about the scene displayed to the Player.
 This includes:
 - What entities are on the screen
+- Light and Terrain data
 - Their corresponding 3D model and texture
 - Their transformation data
 
