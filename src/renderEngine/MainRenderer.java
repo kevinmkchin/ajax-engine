@@ -17,20 +17,20 @@ import java.util.List;
 import java.util.Map;
 
 public class MainRenderer {
-    /*
-    MainRenderer()
-    processEntity(Entity)
-    processTerrain(Terrain)
-    render(Camera, Light, Float)
-    cleanUp()
-    prepare()
-    createProjectionMatrix()
-     */
 
     private static final float FOV = 70;
     private static final float NEAR_PLANE = 0.1f;
     private static final float FAR_PLANE = 1000;
 
+    //Sky/Fog Colour
+    private static final float SKY_R = 0.5f;
+    private static final float SKY_G = 0.5f;
+    private static final float SKY_B = 0.5f;
+
+//    private float fogDensity = 0.007f;
+//    private float fogGradient = 1.5f;
+
+    //terrain default tile number
     private int tileNum = 10;
 
     private Matrix4f projectionMatrix;
@@ -45,11 +45,19 @@ public class MainRenderer {
 
 
     public MainRenderer(){
-        GL11.glEnable(GL11.GL_CULL_FACE);
-        GL11.glCullFace(GL11.GL_BACK);
+        enableCulling();
         createProjectionMatrix();
         this.modelRenderer = new ModelRenderer(staticShader, projectionMatrix);
         this.terrainRenderer = new TerrainRenderer(terrainShader, projectionMatrix);
+    }
+
+    public static void enableCulling(){
+        GL11.glEnable(GL11.GL_CULL_FACE);
+        GL11.glCullFace(GL11.GL_BACK);
+    }
+
+    public static void disableCulling(){
+        GL11.glDisable(GL11.GL_CULL_FACE);
     }
 
     //Put the entities into the HashMap
@@ -71,15 +79,19 @@ public class MainRenderer {
     }
 
     //Actually render everything
-    public void render(Camera camera, Light sun, float ambientLight){
+    //ambientLight is the minimum brightness of entities in the scene
+    //fogDensity is density of the fog, fogGradient is how quickly visibility changes from visible to foggy
+    public void render(Camera camera, Light sun, float ambientLight, float fogDensity, float fogGradient){
         prepare();
         staticShader.start();
+        staticShader.loadFog(SKY_R, SKY_G, SKY_B, fogDensity, fogGradient);
         staticShader.loadLight(sun, ambientLight);
         staticShader.loadViewMatrix(camera);
         modelRenderer.render(entities);
         staticShader.stop();
 
         terrainShader.start();
+        terrainShader.loadFog(SKY_R, SKY_G, SKY_B, fogDensity, fogGradient);
         terrainShader.loadLight(sun, ambientLight);
         terrainShader.loadViewMatrix(camera);
         terrainShader.loadTileNum(tileNum);
@@ -100,7 +112,7 @@ public class MainRenderer {
     public void prepare(){
         GL11.glEnable(GL11.GL_DEPTH_TEST);
         GL11.glClear(GL11.GL_COLOR_BUFFER_BIT|GL11.GL_DEPTH_BUFFER_BIT);
-        GL11.glClearColor(0, 0 , 1, 1);
+        GL11.glClearColor(SKY_R, SKY_G , SKY_B, 1);
     }
 
     private void createProjectionMatrix(){
