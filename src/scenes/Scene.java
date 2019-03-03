@@ -1,11 +1,13 @@
 package scenes;
 
 import assets.entities.Camera;
+import assets.models.ModelData;
+import assets.models.RawModel;
 import assets.models.TexturedModel;
 import assets.textures.ModelTexture;
 import renderEngine.MainRenderer;
 import renderEngine.ModelLoader;
-import renderEngine.OBJLoader;
+import renderEngine.OBJFileLoader;
 
 public abstract class Scene {
 
@@ -65,15 +67,25 @@ public abstract class Scene {
     // REQUIRES: modelFileName & textureFileName does not include file extension
     //           model file is a .obj     texture file is a .png
     protected TexturedModel makeModel(String modelFileName, String textureFileName){
-        return new TexturedModel(OBJLoader.loadObjModel(modelFileName, loader),
-                new ModelTexture(loader.loadTexture(textureFileName)));
+        RawModel rawModel = getRawModel(modelFileName);
+        ModelTexture modelTexture = new ModelTexture(loader.loadTexture(textureFileName));
+
+        return new TexturedModel(rawModel, modelTexture);
     }
     protected TexturedModel makeModel(String modelFileName, String textureFileName, float shineDamper, float reflectivity){
+        RawModel rawModel = getRawModel(modelFileName);
         ModelTexture specularTexture = new ModelTexture(loader.loadTexture(textureFileName));
         specularTexture.setShineDamper(shineDamper);
         specularTexture.setReflectivity(reflectivity);
 
-        return new TexturedModel(OBJLoader.loadObjModel(modelFileName, loader), specularTexture);
+        return new TexturedModel(rawModel, specularTexture);
+    }
+    private RawModel getRawModel(String modelFileName){
+        ModelData modelData = OBJFileLoader.loadOBJ(modelFileName);
+        RawModel rawModel = loader.loadToVAO(modelData.getVertices(), modelData.getTextureCoords(),
+                modelData.getNormals(), modelData.getIndices());
+        return rawModel;
     }
 
+    
 }

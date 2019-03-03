@@ -21,7 +21,6 @@ public class TestScene1 extends Scene{
     Entity stall2 = new DefaultEntity(texturedModel, new Vector3f(0,0,-40f),0,180,0,1);
     Entity stall3 = new DefaultEntity(texturedModel, new Vector3f(-12,0,-34f),0,250,0,1);
     Entity dragon1 = new DefaultEntity(dragon, new Vector3f(10, 0, -25f), 0, 0, 0, 1);
-
     Entity grass = new DefaultEntity(grass3d, new Vector3f(0,0,0), 0, 0, 0, 1);
 
     Light light1 = new Light(new Vector3f(0, 100, 0), new Vector3f(1,1,1));
