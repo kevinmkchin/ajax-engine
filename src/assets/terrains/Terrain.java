@@ -6,7 +6,7 @@ import renderEngine.ModelLoader;
 
 public class Terrain {
 
-    private static final float SIZE = 400;
+    private static final float SIZE = 800;
     private static final int VERTEX_COUNT = 128;
 
     private float x;
@@ -14,7 +14,7 @@ public class Terrain {
     private RawModel model;
     private ModelTexture texture;
 
-    public Terrain(int gridX, int gridZ, ModelLoader loader, String textureFileName){
+    public Terrain(float gridX, float gridZ, ModelLoader loader, String textureFileName){
         this.texture = new ModelTexture(loader.loadTexture(textureFileName));
         this.x = gridX * SIZE;
         this.z = gridZ * SIZE;

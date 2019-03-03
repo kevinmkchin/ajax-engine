@@ -46,12 +46,17 @@ public class ModelRenderer {
         GL20.glEnableVertexAttribArray(1); //texture coords
         GL20.glEnableVertexAttribArray(2); //normals
         ModelTexture texture = model.getTexture();
+        if(texture.isHasTransparency()){
+            MainRenderer.disableCulling();
+        }
+        staticShader.loadFakeLightingBoolean(texture.isUseFakeLighting());
         staticShader.loadShineVariables(texture.getShineDamper(), texture.getReflectivity());
         GL13.glActiveTexture(GL13.GL_TEXTURE0);
         GL11.glBindTexture(GL11.GL_TEXTURE_2D, model.getTexture().getID());
     }
 
     private void unbindTexturedModel(){
+        MainRenderer.enableCulling();
         GL20.glDisableVertexAttribArray(0);
         GL20.glDisableVertexAttribArray(1);
         GL20.glDisableVertexAttribArray(2);
