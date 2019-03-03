@@ -3,7 +3,7 @@ package assets.entities;
 import org.lwjgl.util.vector.Vector3f;
 
 public class Light {
-    
+
     //Constructor takes in a xyz position in 3d space for the point light
     //and a rgb colour as a vector3
 

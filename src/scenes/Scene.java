@@ -21,6 +21,8 @@ public abstract class Scene {
         - e.g. TexturedModel someModel = makeModel("someModel", "textureSomeModel");
         - If the .obj file is located inside a sub-folder of "/res/objs/", then the inputted model name must
           include the sub-folder. (e.g. instead of "mazda", input "cars/mazda") Same for textures.
+        - If the model is a specular model, include the shine damping factor and reflectivity when calling makeModel
+        - e.g. TexturedModel someModel = makeModel("someModel", "textureSomeModel", 10, 1);
 
     2. === Declare and initialize the Entities ===
         - Declare and initialize the Entity type you want (e.g. DefaultEntity)
@@ -54,10 +56,15 @@ public abstract class Scene {
     // REQUIRES: modelFileName & textureFileName does not include file extension
     //           model file is a .obj     texture file is a .png
     protected TexturedModel makeModel(String modelFileName, String textureFileName){
-
         return new TexturedModel(OBJLoader.loadObjModel(modelFileName, loader),
                 new ModelTexture(loader.loadTexture(textureFileName)));
+    }
+    protected TexturedModel makeModel(String modelFileName, String textureFileName, float shineDamper, float reflectivity){
+        ModelTexture specularTexture = new ModelTexture(loader.loadTexture(textureFileName));
+        specularTexture.setShineDamper(shineDamper);
+        specularTexture.setReflectivity(reflectivity);
 
+        return new TexturedModel(OBJLoader.loadObjModel(modelFileName, loader), specularTexture);
     }
 
 }

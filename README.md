@@ -40,6 +40,8 @@ Each scene has:
     - Call the makeModel(String, String) method to create a TexturedModel
     - e.g. *TexturedModel someModel = makeModel("someModel", "textureSomeModel");*
     - If the .obj file is located inside a sub-folder of "/res/objs/", then the inputted model name must include the sub-folder. (e.g. instead of "mazda", input "cars/mazda") Same for textures.
+    - If the model is a specular model, include the shine damping factor and reflectivity when calling makeModel
+    - e.g. *TexturedModel someModel = makeModel("someModel", "textureSomeModel", 10, 1);*
 
 2. Declare and initialize the Entities
     - Declare and initialize the Entity type you want (e.g. DefaultEntity)
@@ -55,7 +57,7 @@ Each scene has:
     - Do this for each entity
 
 NOTE:
-    - renderScene method runs every tick/frame; put methods for entities etc that should be run every tick inside renderScene.
+- renderScene method runs every tick/frame; put methods for entities etc that should be run every tick inside renderScene.
 
 ### Collisions
 ##### Two Types of Collisions:

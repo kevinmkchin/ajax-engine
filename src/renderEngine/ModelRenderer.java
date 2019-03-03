@@ -4,6 +4,7 @@ import assets.entities.Entity;
 import assets.models.RawModel;
 import assets.models.TexturedModel;
 import assets.shaders.StaticShader;
+import assets.textures.ModelTexture;
 import org.lwjgl.opengl.*;
 import org.lwjgl.util.vector.Matrix4f;
 import tools.Maths;
@@ -43,6 +44,9 @@ public class ModelRenderer {
         Matrix4f transformMatrix = Maths.createTransformMatrix(entity.getPosition(),
                 entity.getRotX(), entity.getRotY(), entity.getRotZ(), entity.getScale());
         shader.loadTransformMatrix(transformMatrix);
+
+        ModelTexture texture = model.getTexture();
+        shader.loadShineVariables(texture.getShineDamper(), texture.getReflectivity());
 
         GL13.glActiveTexture(GL13.GL_TEXTURE0);
         GL11.glBindTexture(GL11.GL_TEXTURE_2D, model.getTexture().getID());
