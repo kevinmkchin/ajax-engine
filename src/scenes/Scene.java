@@ -1,10 +1,10 @@
 package scenes;
 
+import assets.entities.Camera;
 import assets.models.TexturedModel;
-import assets.shaders.StaticShader;
 import assets.textures.ModelTexture;
+import renderEngine.MainRenderer;
 import renderEngine.ModelLoader;
-import renderEngine.ModelRenderer;
 import renderEngine.OBJLoader;
 
 public abstract class Scene {
@@ -33,9 +33,12 @@ public abstract class Scene {
         - e.g. Entity someEntity1337 = new DefaultEntity(someModel, new Vector3f(10f,-3f,-30f),0,20,0,1);
 
     3. === Render the Entities
-        - Inside renderScene method, put a call to the render method of an instance of ModelRenderer for each Entity
-        - e.g. renderer.render(someEntity1337, shader);
+        - Inside renderScene method, put a call to the process_______ Method of the MainRenderer for each Entity
+        - e.g. renderer.processEntity(someEntity1337);
         - Do this for each entity
+        - At the end of the renderScene method, make sure to call the MainRenderer's render method with the Camera,
+          the light source, and ambient light factor to actually render everything.
+        - e.g. renderer.render(camera, light1, 0.2f);
 
     NOTE:
         - renderScene method runs every tick/frame;
@@ -45,12 +48,17 @@ public abstract class Scene {
     ModelLoader loader;
 
     // CONSTRUCTOR
+    // Constructor takes in the ModelLoader
     public Scene(ModelLoader loader){
         this.loader = loader;
     }
 
     // RENDER THE SCENE (all Scene subclasses must have a renderScene method where they render the entities)
-    public abstract void renderScene(ModelRenderer renderer, StaticShader shader);
+    // takes in the MainRenderer and the main Camera
+    public abstract void renderScene(MainRenderer renderer, Camera camera);
+    //renderScene needs to
+    // 1. renderer.processEntity or processTerrain
+    // 2. renderer.render
 
     // CREATE A TEXTURED MODEL WITH obj model file & texture file
     // REQUIRES: modelFileName & textureFileName does not include file extension
