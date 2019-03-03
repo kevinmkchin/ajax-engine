@@ -18,8 +18,8 @@ import java.util.List;
 
 public class ModelLoader {
 
-    private List<Integer> vaos = new ArrayList<>(); //list of all vaos
-    private List<Integer> vbos = new ArrayList<>(); //list of all vbos
+    private List<Integer> vaos = new ArrayList<>(); //list of all VAOs
+    private List<Integer> vbos = new ArrayList<>(); //list of all VBOs
     private List<Integer> textures = new ArrayList<>(); //list of all textures
 
     //===== Load a float array(.obj) to VAO RawModel =====

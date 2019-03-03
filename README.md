@@ -1,6 +1,10 @@
 # Ajax Engine
 #### Entity-based OpenGL 3D graphics engine written in Java
 ---
+### Loading 3D Models as an .obj File
+
+- .obj exported from Blender MUST BE smooth shading instead of flat shading.
+
 ### Example VAO in ajax engine:
 
 0: vertices coordinates (x,y,z)\
