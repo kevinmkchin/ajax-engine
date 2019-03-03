@@ -12,6 +12,7 @@ public abstract class Scene {
     //A Scene class stores information about the scene displayed to the Player.
     //This includes:
     // - What entities are on the screen
+    // - Light and Terrain data
     // - Their corresponding 3D model and texture
     // - Their transformation data
     //Create entire levels (i.e. loading .objs and setting their transforms, etc) in Scene classes
