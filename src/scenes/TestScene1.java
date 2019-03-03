@@ -29,7 +29,7 @@ public class TestScene1 extends Scene{
 
         entity1.increaseRotation(0,1f, 0);
 
-        shader.loadLight(light1);
+        shader.loadLight(light1, 0.2f);
         renderer.render(entity1, shader);
         renderer.render(dragon1, shader);
     }

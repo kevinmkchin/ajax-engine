@@ -20,6 +20,9 @@ Store data for items inside an Excel sheet and assign each item a unique ID.
 When initializing an entity, it takes in:\
 (TexturedModel, Vector3 of Position, x rotation, y rotation, z rotation, scale factor) 
 
+##### Lights
+
+
 ### Scenes
 
 A Scene class stores information about the scene displayed to the Player.
