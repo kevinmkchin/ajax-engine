@@ -26,7 +26,7 @@ public class MainGameLoop {
         while(!Display.isCloseRequested()){ //main loop with game logic, rendering, and updating display
             renderer.prepare();
             shader.start();
-            mainCamera.move();
+            mainCamera.update();
             shader.loadViewMatrix(mainCamera);
 
             //INITIALIZE SCENES HERE BY CHECKING FOR STATE CHANGE
