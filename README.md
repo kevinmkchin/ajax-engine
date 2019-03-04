@@ -4,6 +4,7 @@
 ### Loading 3D Models as an .obj File
 
 - .obj exported from Blender MUST BE smooth shading instead of flat shading.
+- Include normals, Include UVs, Triangulate Faces when exporting from Blender.
 
 ### Example VAO in ajax engine:
 

@@ -18,7 +18,7 @@ import java.util.Map;
 
 public class MainRenderer {
 
-    private static final float FOV = 70;
+    private static final float FOV = 80;
     private static final float NEAR_PLANE = 0.1f;
     private static final float FAR_PLANE = 1000;
 
@@ -128,6 +128,10 @@ public class MainRenderer {
         projectionMatrix.m23 = -1;
         projectionMatrix.m32 = -((2 * NEAR_PLANE * FAR_PLANE) / frustum_length);
         projectionMatrix.m33 = 0;
+    }
+
+    public Matrix4f getProjectionMatrix(){
+        return projectionMatrix;
     }
 
 }
