@@ -13,7 +13,7 @@ public class OBJFileLoader {
 
     private static final String RES_LOC = "res/objs/";
 
-    public static ModelData loadOBJ(String objFileName) {
+    public static ModelData loadOBJ(String objFileName, boolean createAABB) {
         FileReader isr = null;
         File objFile = new File(RES_LOC + objFileName + ".obj");
         try {
@@ -78,9 +78,14 @@ public class OBJFileLoader {
         float furthest = convertDataToArrays(vertices, textures, normals, verticesArray, texturesArray, normalsArray);
         int[] indicesArray = convertIndicesListToArray(indices);
 
-        ModelData data = new ModelData(verticesArray, texturesArray, normalsArray, indicesArray, furthest);
-
-        return data;
+        if(createAABB){
+            ModelData data = new ModelData(verticesArray, texturesArray, normalsArray, indicesArray, furthest,
+                    vertices);
+            return data;
+        }else {
+            ModelData data = new ModelData(verticesArray, texturesArray, normalsArray, indicesArray, furthest);
+            return data;
+        }
     }
 
     private static void processVertex(String[] vertex, List<Vertex> vertices, List<Integer> indices) {

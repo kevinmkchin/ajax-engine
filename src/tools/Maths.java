@@ -3,6 +3,7 @@ package tools;
 import assets.entities.Camera;
 import org.lwjgl.util.vector.Matrix4f;
 import org.lwjgl.util.vector.Vector3f;
+import org.lwjgl.util.vector.Vector4f;
 
 public class Maths {
 
@@ -30,6 +31,25 @@ public class Maths {
         Matrix4f.translate(oppositeOfCameraPos, viewMatrix, viewMatrix);
 
         return viewMatrix;
+    }
+
+    public static Vector3f applyTransformationMatrix(Vector3f initialPosition, Matrix4f transformMatrix){
+        Vector4f position4d = new Vector4f(initialPosition.x, initialPosition.y, initialPosition.z, 1);
+        float x = transformMatrix.m00 * position4d.x
+                + transformMatrix.m10 * position4d.y
+                + transformMatrix.m20 * position4d.z
+                + transformMatrix.m30 * position4d.w;
+        float y = transformMatrix.m01 * position4d.x
+                + transformMatrix.m11 * position4d.y
+                + transformMatrix.m21 * position4d.z
+                + transformMatrix.m31 * position4d.w;
+        float z = transformMatrix.m02 * position4d.x
+                + transformMatrix.m12 * position4d.y
+                + transformMatrix.m22 * position4d.z
+                + transformMatrix.m32 * position4d.w;
+        Vector3f newPosition = new Vector3f(x,y,z);
+
+        return newPosition;
     }
 
 }

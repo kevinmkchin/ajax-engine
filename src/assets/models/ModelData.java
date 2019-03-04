@@ -1,5 +1,7 @@
 package assets.models;
 
+import java.util.List;
+
 public class ModelData {
 
     private float[] vertices;
@@ -7,14 +9,23 @@ public class ModelData {
     private float[] normals;
     private int[] indices;
     private float furthestPoint;
+    private List<Vertex> verticesForAABB = null;
 
-    public ModelData(float[] vertices, float[] textureCoords, float[] normals, int[] indices,
-                     float furthestPoint) {
+    public ModelData(float[] vertices, float[] textureCoords, float[] normals, int[] indices, float furthestPoint) {
         this.vertices = vertices;
         this.textureCoords = textureCoords;
         this.normals = normals;
         this.indices = indices;
         this.furthestPoint = furthestPoint;
+    }
+    public ModelData(float[] vertices, float[] textureCoords, float[] normals, int[] indices, float furthestPoint,
+                     List<Vertex> verticesForAABB) {
+        this.vertices = vertices;
+        this.textureCoords = textureCoords;
+        this.normals = normals;
+        this.indices = indices;
+        this.furthestPoint = furthestPoint;
+        this.verticesForAABB = verticesForAABB;
     }
 
     public float[] getVertices() {
@@ -37,4 +48,7 @@ public class ModelData {
         return furthestPoint;
     }
 
+    public List<Vertex> getVerticesForAABB() {
+        return verticesForAABB;
+    }
 }

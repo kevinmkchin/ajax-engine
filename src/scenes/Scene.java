@@ -66,26 +66,32 @@ public abstract class Scene {
     // CREATE A TEXTURED MODEL WITH obj model file & texture file
     // REQUIRES: modelFileName & textureFileName does not include file extension
     //           model file is a .obj     texture file is a .png
-    protected TexturedModel makeModel(String modelFileName, String textureFileName){
-        RawModel rawModel = getRawModel(modelFileName);
+    protected TexturedModel makeModel(String modelFileName, String textureFileName, boolean hasCollision){
+        RawModel rawModel = getRawModel(modelFileName, hasCollision);
         ModelTexture modelTexture = new ModelTexture(loader.loadTexture(textureFileName));
 
         return new TexturedModel(rawModel, modelTexture);
     }
-    protected TexturedModel makeModel(String modelFileName, String textureFileName, float shineDamper, float reflectivity){
-        RawModel rawModel = getRawModel(modelFileName);
+    protected TexturedModel makeModel(String modelFileName, String textureFileName, boolean hasCollision,
+                                      float shineDamper, float reflectivity){
+        RawModel rawModel = getRawModel(modelFileName, hasCollision);
         ModelTexture specularTexture = new ModelTexture(loader.loadTexture(textureFileName));
         specularTexture.setShineDamper(shineDamper);
         specularTexture.setReflectivity(reflectivity);
 
         return new TexturedModel(rawModel, specularTexture);
     }
-    private RawModel getRawModel(String modelFileName){
-        ModelData modelData = OBJFileLoader.loadOBJ(modelFileName);
+    private RawModel getRawModel(String modelFileName, boolean createAABB){
+        ModelData modelData = OBJFileLoader.loadOBJ(modelFileName, createAABB);
         RawModel rawModel = loader.loadToVAO(modelData.getVertices(), modelData.getTextureCoords(),
                 modelData.getNormals(), modelData.getIndices());
+        if(modelData.getVerticesForAABB() != null){
+            rawModel.setVerticesForAABB(modelData.getVerticesForAABB());
+        }
+
         return rawModel;
     }
 
-    
+
+
 }
