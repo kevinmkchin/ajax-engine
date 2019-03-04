@@ -1,51 +1,48 @@
 # Ajax Engine
 #### Entity-based OpenGL 3D graphics engine written in Java
 ---
-### Loading 3D Models as an .obj File
+## Engine Modes
+##### Scene Editor Mode
+Scene editor allows for easy editing and designing of scenes and levels.
+- Hold right-click and use WASD to move around, RF to move up and down.
+- Left-click on entities with collision boxes to select them and edit their position, rotation, or scale.
 
-- .obj exported from Blender MUST BE smooth shading instead of flat shading.
+## Entities
+##### Default Entity
+When initializing an entity, it takes in:\
+(TexturedModel, Vector3 of Position, x rotation, y rotation, z rotation, scale factor) 
+
+##### Collision Entity
+All entities with an Axis-Aligned Bounding Box collision must use this Entity type or its subtypes.
+
+##### Lights
+
+## Loading 3D Models as an .obj File
+
+- .obj exported from Blender must be smooth shading instead of flat shading.
 - Include normals, Include UVs, Triangulate Faces when exporting from Blender.
 
-### Example VAO in ajax engine:
+##### Example VAO:
 
 0: vertices coordinates (x,y,z)\
 1: texture coordinates (u,v)\
 Each VAO has a special slot for the index buffer (not part of attribute array).
 
-### Item Data
-
-Store data for items inside an Excel sheet and assign each item a unique ID.
-
-##### Make creating lots of content and data at once easy.
-
-### Display
-
-### Entities
-
-When initializing an entity, it takes in:\
-(TexturedModel, Vector3 of Position, x rotation, y rotation, z rotation, scale factor) 
-
-##### Lights
-
-
-### Scenes
-
-A Scene class stores information about the scene displayed to the Player.
+## Scenes
+A Scene class stores information about the scene displayed to the Player. Create entire levels (i.e. loading .objs and setting their transforms, etc) in Scene classes.\
 This includes:
-- What entities are on the screen
 - Light and Terrain data
+- What entities are on the screen
 - Their corresponding 3D model and texture
 - Their transformation data
 - A list of all bounding boxes(collision boxes) in the scene
 
-Create entire levels (i.e. loading .objs and setting their transforms, etc) in Scene classes
-
 Each scene is a subclass of the Scene class.\
 Each scene has:
-- Data for objects and models of the scene
 - Constructor to initialize local ModelLoader field.
 - renderScene method to render the models, etc.
 
+##### How to make Scenes
 1. Declare and initialize the TexturedModels
     - Call the makeModel(String, String) method to create a TexturedModel
     - e.g. *TexturedModel someModel = makeModel("someModel", "textureSomeModel");*
@@ -71,18 +68,31 @@ Each scene has:
 NOTE:
 - renderScene method runs every tick/frame; put methods for entities etc that should be run every tick inside renderScene.
 
-### Collisions
-##### Two Types of Collisions:
-
+## Collisions
+##### Types of Collisions in Ajax Engine:
 - Collisions with the terrain
-- Collisions with Oriented Bounding Boxes OR another more complex collision box
+- Collisions with Axis-Aligned Bounding Box
 
 ##### Axis-Aligned Bounding Boxes
 Collision Entity and AABoundingBox have a bi-directional relationship.
 
-The CollisionCreator goes through every vertex of a 3D model to find the maximum X, Y, Z values and minimum X, Y, Z values.
+The CollisionCreator goes through every vertex of a 3D model to find the maximum X, Y, Z values and minimum X, Y, Z values.\
 Max XYZ becomes the top right corner of the bounding box, Min XYZ becomes the bottom left corner of the bounding box.\
-isColliding(AABB) of the AABB class checks for collision by checking if the x-max or the x-min of the other box is between x-max and x-min of the current box. Check for XYZ axis and return true if true for all 3 axis.
+IsBoxColliding(AABB) of the AABB class checks for collision by checking if the x-max or the x-min of the other box is between x-max and x-min of the current box. Check for XYZ axis and return true if true for all 3 axis.\
+IsPointColliding(Vector3) does the same as IsBoxColliding but only for a single point.
 
+How to enable ABBB for entities:
 1. When calling makeModel method for TexturedModel, enable collision.
 2. Have the Entity be of type CollisionEntity.
+
+## Display
+
+
+## Item Data
+Store data for items inside an Excel sheet and assign each item a unique ID.
+
+##### Make creating lots of content and data at once easy.
+
+
+
+
