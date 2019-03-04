@@ -33,6 +33,7 @@ public class Maths {
         return viewMatrix;
     }
 
+    // MULTIPLY TRANSFORMATION MATRIX WITH POSITION VECTOR
     public static Vector3f applyTransformationMatrix(Vector3f initialPosition, Matrix4f transformMatrix){
         Vector4f position4d = new Vector4f(initialPosition.x, initialPosition.y, initialPosition.z, 1);
         float x = transformMatrix.m00 * position4d.x
@@ -50,6 +51,11 @@ public class Maths {
         Vector3f newPosition = new Vector3f(x,y,z);
 
         return newPosition;
+    }
+
+    // CHECK IF NUM IS MIN <= NUM <= MAX
+    public static boolean isNumBetween(float min, float max, float num){
+        return min <= num && num <= max;
     }
 
 }

@@ -1,9 +1,11 @@
 package assets.collisions;
 
+import assets.entities.CollisionEntity;
 import org.lwjgl.util.vector.Vector3f;
+import tools.Maths;
 
+//Kevin's Axis Aligned Bounding Box
 public class AABB {
-    //Kevin's Axis Aligned Bounding Box
 
     private float xMax;
     private float xMin;
@@ -13,6 +15,8 @@ public class AABB {
     private float yMin;
     private Vector3f maxCorner;
     private Vector3f minCorner;
+
+    private CollisionEntity entity = null;
 
     public AABB(float xMax, float xMin, float zMax, float zMin, float yMax, float yMin) {
         this.xMax = xMax;
@@ -25,42 +29,54 @@ public class AABB {
         minCorner = new Vector3f(xMin, yMin, zMin);
     }
 
-    public boolean isColliding(AABB otherBox){
-        float oxMax = otherBox.getxMax();
-        float oxMin = otherBox.getxMin();
-        float oyMax = otherBox.getyMax();
-        float oyMin = otherBox.getyMin();
-        float ozMax = otherBox.getzMax();
-        float ozMin = otherBox.getzMin();
-        boolean xBound = xMin <= oxMax && oxMax <= xMax || xMin <= oxMin && oxMin <= xMax;
-        boolean yBound = yMin <= oyMax && oyMax <= yMax || yMin <= oyMin && oyMin <= yMax;
-        boolean zBound = zMin <= ozMax && ozMax <= zMax || zMin <= ozMin && ozMin <= zMax;
+    public boolean isBoxColliding(AABB otherBox){
+        float oxMax = otherBox.getMaxCorner().x;
+        float oxMin = otherBox.getMinCorner().x;
+        float oyMax = otherBox.getMaxCorner().y;
+        float oyMin = otherBox.getMinCorner().y;
+        float ozMax = otherBox.getMaxCorner().z;
+        float ozMin = otherBox.getMaxCorner().z;
+        boolean xBound = Maths.isNumBetween(xMin, xMax, oxMax) || Maths.isNumBetween(xMin, xMax, oxMin);
+        boolean yBound = Maths.isNumBetween(yMin, yMax, oyMax) || Maths.isNumBetween(yMin, yMax, oyMin);
+        boolean zBound = Maths.isNumBetween(zMin, zMax, ozMax) || Maths.isNumBetween(zMin, zMax, ozMin);
 
         return xBound && yBound && zBound;
     }
 
-    public float getxMax() {
-        return xMax;
+    public boolean isPointColliding(Vector3f point){
+        boolean xBound = Maths.isNumBetween(xMin, xMax, point.x);
+        boolean yBound = Maths.isNumBetween(yMin, yMax, point.y);
+        boolean zBound = Maths.isNumBetween(zMin, zMax, point.z);
+
+        return xBound && yBound && zBound;
     }
-    public float getxMin() {
-        return xMin;
+
+    //if isn't already tied to an entity,
+    public void setEntity(CollisionEntity entity){
+        if(this.entity == null) {
+            this.entity = entity;
+        }
     }
-    public float getzMax() {
-        return zMax;
+    public CollisionEntity getEntity(){
+        return entity;
     }
-    public float getzMin() {
-        return zMin;
-    }
-    public float getyMax() {
-        return yMax;
-    }
-    public float getyMin() {
-        return yMin;
-    }
+
     public Vector3f getMaxCorner() {
         return maxCorner;
     }
     public Vector3f getMinCorner() {
         return minCorner;
     }
+
+    public void updateBoundingBox(float dx, float dy, float dz){
+        xMax += dx;
+        xMin += dx;
+        yMax += dy;
+        yMin += dy;
+        zMax += dz;
+        zMin += dz;
+        maxCorner = new Vector3f(xMax, yMax, zMax);
+        minCorner = new Vector3f(xMin, yMin, zMin);
+    }
+
 }

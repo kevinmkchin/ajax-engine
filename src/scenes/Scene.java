@@ -1,5 +1,6 @@
 package scenes;
 
+import assets.collisions.AABB;
 import assets.entities.Camera;
 import assets.models.ModelData;
 import assets.models.RawModel;
@@ -9,6 +10,9 @@ import renderEngine.MainRenderer;
 import renderEngine.ModelLoader;
 import renderEngine.OBJFileLoader;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Scene {
 
     //A Scene class stores information about the scene displayed to the Player.
@@ -17,6 +21,7 @@ public abstract class Scene {
     // - Light and Terrain data
     // - Their corresponding 3D model and texture
     // - Their transformation data
+    // - A list of all bounding boxes in the scene
     //Create entire levels (i.e. loading .objs and setting their transforms, etc) in Scene classes
     /*
     1. === Declare and initialize the TexturedModels ===
@@ -48,12 +53,15 @@ public abstract class Scene {
           put methods for entities etc that should be run every tick inside renderScene
     */
 
-    ModelLoader loader;
+    protected ModelLoader loader;
+
+    public static List<AABB> boundingBoxes = new ArrayList<>();
 
     // CONSTRUCTOR
     // Constructor takes in the ModelLoader
     public Scene(ModelLoader loader){
         this.loader = loader;
+        boundingBoxes.clear();
     }
 
     // RENDER THE SCENE (all Scene subclasses must have a renderScene method where they render the entities)

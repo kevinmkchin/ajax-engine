@@ -1,4 +1,4 @@
-package engineTest;
+package gameEngine;
 
 import assets.entities.Camera;
 import org.lwjgl.opengl.Display;

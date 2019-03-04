@@ -5,12 +5,21 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ajax-engine/assets/collisions/AABB.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ajax-engine/assets/collisions/AABB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ajax-engine/engineTest/MainGameLoop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ajax-engine/engineTest/MainGameLoop.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ajax-engine/scenes/TestScene1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ajax-engine/scenes/TestScene1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ajax-engine/assets/entities/Camera.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ajax-engine/assets/entities/Camera.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ajax-engine/assets/entities/CollisionEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ajax-engine/assets/entities/CollisionEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ajax-engine/engineTest/MainGameLoop.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ajax-engine/scenes/CollisionTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ajax-engine/scenes/CollisionTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ajax-engine/scenes/Scene.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ajax-engine/scenes/Scene.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ajax-engine/tools/Maths.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ajax-engine/tools/Maths.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ajax-engine/tools/MousePicker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ajax-engine/tools/MousePicker.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/collisions/AABB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/collisions/AABB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/collisions/CollisionCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/collisions/CollisionCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engineTest/MainGameLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineTest/MainGameLoop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scenes/TestScene1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/TestScene1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/entities/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/entities/Camera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/entities/CollisionEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/entities/CollisionEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engineTest/MainGameLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/MainGameLoop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scenes/CollisionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/CollisionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scenes/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/Scene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tools/Maths.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/Maths.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tools/MousePicker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/MousePicker.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,24 +42,12 @@
     <option name="MAKE_PROJECT_ON_SAVE" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/engineTest/MainGameLoop.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/assets/collisions/CollisionCreator.java">
+        <entry file="file://$PROJECT_DIR$/src/gameEngine/SceneEditorMode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-162">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="315">
+              <caret line="69" column="37" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -59,49 +56,23 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/assets/collisions/AABB.java">
+        <entry file="file://$PROJECT_DIR$/src/scenes/Scene.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="24" column="51" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
+            <state relative-caret-position="180">
+              <caret line="54" selection-start-line="54" selection-end-line="54" />
               <folding>
-                <element signature="e#877#878#0" expanded="true" />
-                <element signature="e#904#905#0" expanded="true" />
-                <element signature="e#934#935#0" expanded="true" />
-                <element signature="e#961#962#0" expanded="true" />
-                <element signature="e#991#992#0" expanded="true" />
-                <element signature="e#1018#1019#0" expanded="true" />
-                <element signature="e#1048#1049#0" expanded="true" />
-                <element signature="e#1075#1076#0" expanded="true" />
-                <element signature="e#1105#1106#0" expanded="true" />
-                <element signature="e#1132#1133#0" expanded="true" />
-                <element signature="e#1162#1163#0" expanded="true" />
-                <element signature="e#1189#1190#0" expanded="true" />
-                <element signature="e#1227#1228#0" expanded="true" />
-                <element signature="e#1259#1260#0" expanded="true" />
-                <element signature="e#1297#1298#0" expanded="true" />
-                <element signature="e#1329#1330#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="method#Scene#0;class#Scene#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="462">
-                <caret line="81" column="217" selection-start-line="81" selection-start-column="217" selection-end-line="81" selection-end-column="217" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scenes/TestScene1.java">
+        <entry file="file://$PROJECT_DIR$/src/tools/MousePicker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="438">
-              <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+            <state relative-caret-position="-80">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -112,8 +83,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scenes/CollisionTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+            <state relative-caret-position="-45">
+              <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assets/entities/Camera.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="24" column="58" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -149,7 +132,6 @@
         <option value="$PROJECT_DIR$/src/assets/entities/DefaultEntity.java" />
         <option value="$PROJECT_DIR$/src/scenes/TestScene2.java" />
         <option value="$PROJECT_DIR$/src/assets/entities/Light.java" />
-        <option value="$PROJECT_DIR$/src/assets/entities/Camera.java" />
         <option value="$PROJECT_DIR$/src/scenes/scenaefa.java" />
         <option value="$PROJECT_DIR$/src/renderEngine/TerrainRenderer.java" />
         <option value="$PROJECT_DIR$/src/assets/textures/ModelTexture.java" />
@@ -164,21 +146,24 @@
         <option value="$PROJECT_DIR$/src/renderEngine/OBJLoader.java" />
         <option value="$PROJECT_DIR$/src/assets/models/Vertex.java" />
         <option value="$PROJECT_DIR$/src/renderEngine/ModelLoader.java" />
-        <option value="$PROJECT_DIR$/src/tools/MousePicker.java" />
         <option value="$PROJECT_DIR$/src/renderEngine/MainRenderer.java" />
         <option value="$PROJECT_DIR$/src/assets/models/RawModel.java" />
         <option value="$PROJECT_DIR$/src/assets/models/ModelData.java" />
         <option value="$PROJECT_DIR$/src/renderEngine/OBJFileLoader.java" />
-        <option value="$PROJECT_DIR$/src/scenes/Scene.java" />
         <option value="$PROJECT_DIR$/src/assets/models/TexturedModel.java" />
-        <option value="$PROJECT_DIR$/src/tools/Maths.java" />
-        <option value="$PROJECT_DIR$/src/assets/entities/CollisionEntity.java" />
-        <option value="$PROJECT_DIR$/src/scenes/CollisionTest.java" />
-        <option value="$PROJECT_DIR$/src/engineTest/MainGameLoop.java" />
         <option value="$PROJECT_DIR$/src/assets/collisions/CollisionCreator.java" />
-        <option value="$PROJECT_DIR$/src/assets/collisions/AABB.java" />
         <option value="$PROJECT_DIR$/src/scenes/TestScene1.java" />
+        <option value="$PROJECT_DIR$/src/engineTest/MainGameLoop.java" />
+        <option value="$PROJECT_DIR$/src/gameEngine/MainGameLoop.java" />
+        <option value="$PROJECT_DIR$/src/tools/MousePicker.java" />
+        <option value="$PROJECT_DIR$/src/tools/Maths.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/scenes/Scene.java" />
+        <option value="$PROJECT_DIR$/src/assets/collisions/AABB.java" />
+        <option value="$PROJECT_DIR$/src/assets/entities/CollisionEntity.java" />
+        <option value="$PROJECT_DIR$/src/assets/entities/Camera.java" />
+        <option value="$PROJECT_DIR$/src/scenes/CollisionTest.java" />
+        <option value="$PROJECT_DIR$/src/gameEngine/SceneEditorMode.java" />
       </list>
     </option>
   </component>
@@ -195,30 +180,13 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="ajax-engine" type="b2602c69:ProjectViewProjectNode" />
               <item name="ajax-engine" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ajax-engine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ajax-engine" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ajax-engine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ajax-engine" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-              <item name="objs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ajax-engine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ajax-engine" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-              <item name="textures" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ajax-engine" type="b2602c69:ProjectViewProjectNode" />
@@ -249,21 +217,7 @@
               <item name="ajax-engine" type="b2602c69:ProjectViewProjectNode" />
               <item name="ajax-engine" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ajax-engine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ajax-engine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="shaders" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ajax-engine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ajax-engine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="engineTest" type="462c0819:PsiDirectoryNode" />
+              <item name="gameEngine" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ajax-engine" type="b2602c69:ProjectViewProjectNode" />
@@ -281,7 +235,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -290,10 +244,10 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/natives" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -313,13 +267,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.SceneEditorMode">
     <configuration name="MainGameLoop" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="engineTest.MainGameLoop" />
+      <option name="MAIN_CLASS_NAME" value="gameEngine.MainGameLoop" />
       <module name="ajax-engine" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="engineTest.*" />
+          <option name="PATTERN" value="gameEngine.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SceneEditorMode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gameEngine.SceneEditorMode" />
+      <module name="ajax-engine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gameEngine.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -329,6 +296,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SceneEditorMode" />
         <item itemvalue="Application.MainGameLoop" />
       </list>
     </recent_temporary>
@@ -351,24 +319,27 @@
       <workItem from="1551525604178" duration="956000" />
       <workItem from="1551558525046" duration="40188000" />
       <workItem from="1551614104707" duration="44000" />
-      <workItem from="1551645539210" duration="28167000" />
+      <workItem from="1551645539210" duration="29407000" />
+      <workItem from="1551679547532" duration="490000" />
+      <workItem from="1551680087371" duration="5144000" />
+      <workItem from="1551693635427" duration="3268000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94749000" />
+    <option name="totallyTimeSpent" value="104891000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22214764" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23221476" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.28328612" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34419262" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -388,13 +359,13 @@
       <window_info anchor="right" id="Palette&#9;" order="4" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22684564" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22885907" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.28328612" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.44759208" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -578,18 +549,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tools/MousePicker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="658">
-          <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#534#535#0" expanded="true" />
-            <element signature="e#567#568#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/models/RawModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -610,16 +569,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#719#720#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/entities/DefaultEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -654,16 +603,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/entities/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/shaders/vertexShader.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="61">
@@ -675,16 +614,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1340">
           <caret line="21" column="20" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tools/Maths.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -717,46 +646,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/entities/Camera.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="30" column="60" selection-start-line="30" selection-start-column="60" selection-end-line="30" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/objs/dragon.obj">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-180" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenes/Scene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/objs/stall.obj">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-26049" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/entities/CollisionEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#868#869#0" expanded="true" />
-            <element signature="e#902#903#0" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/objs/cube.obj">
@@ -772,47 +669,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/engineTest/MainGameLoop.java">
+    <entry file="file://$PROJECT_DIR$/src/gameEngine/MainGameLoop.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+        <state relative-caret-position="418">
+          <caret line="33" column="39" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenes/CollisionTest.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Object.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="946">
+          <caret line="145" column="33" selection-start-line="145" selection-start-column="26" selection-end-line="145" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/collisions/AABB.java">
+    <entry file="file://$PROJECT_DIR$/src/tools/Maths.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="24" column="51" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
+        <state relative-caret-position="498">
+          <caret line="55" column="40" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
           <folding>
-            <element signature="e#877#878#0" expanded="true" />
-            <element signature="e#904#905#0" expanded="true" />
-            <element signature="e#934#935#0" expanded="true" />
-            <element signature="e#961#962#0" expanded="true" />
-            <element signature="e#991#992#0" expanded="true" />
-            <element signature="e#1018#1019#0" expanded="true" />
-            <element signature="e#1048#1049#0" expanded="true" />
-            <element signature="e#1075#1076#0" expanded="true" />
-            <element signature="e#1105#1106#0" expanded="true" />
-            <element signature="e#1132#1133#0" expanded="true" />
-            <element signature="e#1162#1163#0" expanded="true" />
-            <element signature="e#1189#1190#0" expanded="true" />
-            <element signature="e#1227#1228#0" expanded="true" />
-            <element signature="e#1259#1260#0" expanded="true" />
-            <element signature="e#1297#1298#0" expanded="true" />
-            <element signature="e#1329#1330#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -820,8 +699,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="462">
-            <caret line="81" column="217" selection-start-line="81" selection-start-column="217" selection-end-line="81" selection-end-column="217" />
+          <first_editor relative-caret-position="1600">
+            <caret line="80" column="70" selection-start-line="80" selection-start-column="70" selection-end-line="80" selection-end-column="70" />
           </first_editor>
           <second_editor />
         </state>
@@ -829,8 +708,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scenes/TestScene1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+        <state relative-caret-position="20">
+          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/entities/DefaultEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenes/Scene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#Scene#0;class#Scene#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/collisions/AABB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="78" column="51" selection-start-line="78" selection-start-column="51" selection-end-line="78" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/entities/CollisionEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="26" column="22" lean-forward="true" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -839,8 +759,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/collisions/CollisionCreator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-162">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        <state>
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/entities/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/entities/Camera.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="24" column="58" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenes/CollisionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-45">
+          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tools/MousePicker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-80">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gameEngine/SceneEditorMode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="69" column="37" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

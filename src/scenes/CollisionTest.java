@@ -21,8 +21,9 @@ public class CollisionTest extends Scene {
     CollisionEntity stallA =
             new CollisionEntity(stall,new Vector3f(0,0,0),0,0,0,1);
     DefaultEntity cubeA =
-            new DefaultEntity(cube,new Vector3f(stallA.getBoundingBox().getxMax(),
-                    stallA.getBoundingBox().getyMax(),stallA.getBoundingBox().getzMax()),0,0,0,0.3f);
+            new DefaultEntity(cube,new Vector3f(stallA.getBoundingBox().getMaxCorner().x,
+                    stallA.getBoundingBox().getMaxCorner().y,stallA.getBoundingBox().getMaxCorner().z),
+                    0,0,0,0.3f);
 
     public CollisionTest(ModelLoader loader) {
         super(loader);

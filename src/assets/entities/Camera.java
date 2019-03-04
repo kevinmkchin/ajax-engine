@@ -6,7 +6,7 @@ import org.lwjgl.util.vector.Vector3f;
 
 public class Camera {
 
-    private boolean editorMode = true;
+    private boolean editorMode = false;
 
     private Vector3f position = new Vector3f(0,10,0);
     private float pitch = 0;
@@ -22,9 +22,9 @@ public class Camera {
         float x = (float) (Math.cos(Math.toRadians(pitch)) * Math.sin(Math.toRadians(yaw)));
         float y = (float) -Math.sin(Math.toRadians(pitch));
         float z = (float) (Math.cos(Math.toRadians(pitch)) * -Math.cos(Math.toRadians(yaw)));
-        Vector3f towardsCentre = new Vector3f(x,y,z);
-        towardsCentre.scale(cameraSpeed);
-        Vector3f perpendicularVector = new Vector3f(towardsCentre.z, 0, -towardsCentre.x);
+        Vector3f camDirectionVector = new Vector3f(x,y,z);
+        camDirectionVector.scale(cameraSpeed);
+        Vector3f perpendicularVector = new Vector3f(camDirectionVector.z, 0, -camDirectionVector.x);
         perpendicularVector.scale(cameraSpeed);
 
         if(editorMode) {
@@ -32,10 +32,10 @@ public class Camera {
                 calculatePitch();
                 calculateYaw();
                 if (Keyboard.isKeyDown(Keyboard.KEY_W)) {
-                    Vector3f.add(position, towardsCentre, position);
+                    Vector3f.add(position, camDirectionVector, position);
                 }
                 if (Keyboard.isKeyDown(Keyboard.KEY_S)) {
-                    Vector3f.sub(position, towardsCentre, position);
+                    Vector3f.sub(position, camDirectionVector, position);
                 }
                 if (Keyboard.isKeyDown(Keyboard.KEY_A)) {
                     Vector3f.add(position, perpendicularVector, position);
