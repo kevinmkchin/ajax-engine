@@ -7,6 +7,7 @@ import renderEngine.MainRenderer;
 import renderEngine.ModelLoader;
 import scenes.Scene;
 import scenes.TestScene1;
+import tools.MousePicker;
 
 public class MainGameLoop {
 
@@ -20,6 +21,8 @@ public class MainGameLoop {
         Camera mainCamera = new Camera();
         ///======================
 
+        MousePicker picker = new MousePicker(mainCamera, mainRenderer.getProjectionMatrix());
+
         Scene scene = new TestScene1(loader);
 
         while(!Display.isCloseRequested()){ //main loop with game logic, rendering, and updating display
@@ -32,6 +35,8 @@ public class MainGameLoop {
             //     if (gameState_2) then scene = new SecondScene();
 
             // ==== testing ====
+            picker.update();
+            //System.out.println(picker.getCurrentRay());
             scene.renderScene(mainRenderer, mainCamera);
             // ==== testing ====
 
