@@ -25,30 +25,42 @@ public class CollisionCreator {
     }
 
     private AABB calculateBoundingBox(){
-        float tempXMax = 0.0f;
-        float tempXMin = 0.0f;
-        float tempZMax = 0.0f;
-        float tempZMin = 0.0f;
-        float tempYMax = 0.0f;
-        float tempYMin = 0.0f;
+        float tempXMax = 0;
+        float tempXMin = 0;
+        float tempZMax = 0;
+        float tempZMin = 0;
+        float tempYMax = 0;
+        float tempYMin = 0;
+        boolean initialValuesSet = false;
+
         for(Vector3f vec3 : transformedVertices){
-            if(vec3.x >= tempXMax){
+            if(initialValuesSet) {
+                if (vec3.x >= tempXMax) {
+                    tempXMax = vec3.x;
+                }
+                if (vec3.x <= tempXMin) {
+                    tempXMin = vec3.x;
+                }
+                if (vec3.z >= tempZMax) {
+                    tempZMax = vec3.z;
+                }
+                if (vec3.z <= tempZMin) {
+                    tempZMin = vec3.z;
+                }
+                if (vec3.y >= tempYMax) {
+                    tempYMax = vec3.y;
+                }
+                if (vec3.y <= tempYMin) {
+                    tempYMin = vec3.y;
+                }
+            }else{
                 tempXMax = vec3.x;
-            }
-            if(vec3.x <= tempXMin){
                 tempXMin = vec3.x;
-            }
-            if(vec3.z >= tempZMax){
                 tempZMax = vec3.z;
-            }
-            if(vec3.z <= tempZMin){
                 tempZMin = vec3.z;
-            }
-            if(vec3.y >= tempYMax){
                 tempYMax = vec3.y;
-            }
-            if(vec3.y <= tempYMin){
                 tempYMin = vec3.y;
+                initialValuesSet = true;
             }
         }
         return new AABB(tempXMax, tempXMin, tempZMax, tempZMin, tempYMax, tempYMin);

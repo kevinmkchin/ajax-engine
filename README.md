@@ -78,7 +78,8 @@ NOTE:
 
 ##### Axis-Aligned Bounding Boxes
 The CollisionCreator goes through every vertex of a 3D model to find the maximum X, Y, Z values and minimum X, Y, Z values.
-Max XYZ becomes the top right corner of the bounding box, Min XYZ becomes the bottom left corner of the bounding box.
+Max XYZ becomes the top right corner of the bounding box, Min XYZ becomes the bottom left corner of the bounding box.\
+isColliding(AABB) of the AABB class checks for collision by checking if the x-max or the x-min of the other box is between x-max and x-min of the current box. Check for XYZ axis and return true if true for all 3 axis.
 
 1. When calling makeModel method for TexturedModel, enable collision.
 2. Have the Entity be of type CollisionEntity.

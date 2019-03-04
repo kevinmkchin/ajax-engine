@@ -5,8 +5,8 @@ import org.lwjgl.opengl.Display;
 import renderEngine.DisplayManager;
 import renderEngine.MainRenderer;
 import renderEngine.ModelLoader;
-import scenes.CollisionTest;
 import scenes.Scene;
+import scenes.TestScene1;
 import tools.MousePicker;
 
 public class MainGameLoop {
@@ -23,7 +23,7 @@ public class MainGameLoop {
 
         MousePicker picker = new MousePicker(mainCamera, mainRenderer.getProjectionMatrix());
 
-        Scene scene = new CollisionTest(loader);
+        Scene scene = new TestScene1(loader);
 
         while(!Display.isCloseRequested()){ //main loop with game logic, rendering, and updating display
             mainCamera.update(); //update camera position
