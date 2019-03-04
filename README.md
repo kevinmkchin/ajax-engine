@@ -75,3 +75,10 @@ NOTE:
 
 - Collisions with the terrain
 - Collisions with Oriented Bounding Boxes OR another more complex collision box
+
+##### Axis-Aligned Bounding Boxes
+The CollisionCreator goes through every vertex of a 3D model to find the maximum X, Y, Z values and minimum X, Y, Z values.
+Max XYZ becomes the top right corner of the bounding box, Min XYZ becomes the bottom left corner of the bounding box.
+
+1. When calling makeModel method for TexturedModel, enable collision.
+2. Have the Entity be of type CollisionEntity.
