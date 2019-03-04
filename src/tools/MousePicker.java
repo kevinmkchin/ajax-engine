@@ -1,5 +1,6 @@
 package tools;
 
+import assets.collisions.AABB;
 import assets.entities.Camera;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.Display;
@@ -10,7 +11,10 @@ import org.lwjgl.util.vector.Vector4f;
 
 public class MousePicker {
 
+    private final int RAY_RANGE = 140; //range of ray cast is half of this value
+
     private Vector3f currentRay;
+    private Vector3f origin;
 
     private Matrix4f projectionMatrix;
     private Matrix4f viewMatrix;
@@ -28,7 +32,27 @@ public class MousePicker {
 
     public void update(){
         viewMatrix = Maths.createViewMatrix(camera);
+        origin = camera.getPosition();
         currentRay = calculateRayCast();
+    }
+
+    //CHECK IF MOUSE RAY HIT A BOUNDING BOX
+    //Iterate through increasing lengths of currentRay direction vector
+    //if an iteration of a ray has its end point inside a bounding box, return true
+    public boolean isRayHittingBox(AABB box){
+        Vector3f checkPoint;
+
+        for(int i = 1; i < RAY_RANGE; i++) {
+            checkPoint = new Vector3f();
+            Vector3f checkRay = new Vector3f(currentRay.x, currentRay.y, currentRay.z);
+            checkRay.scale((float) i / 2);
+            Vector3f.add(origin, checkRay, checkPoint);
+
+            if(box.isPointColliding(checkPoint)){
+                return true;
+            }
+        }
+        return false;
     }
 
     private Vector3f calculateRayCast(){
