@@ -25,8 +25,18 @@ public class AABB {
         minCorner = new Vector3f(xMin, yMin, zMin);
     }
 
-    private boolean isColliding(AABB otherBox){
-        return false;
+    public boolean isColliding(AABB otherBox){
+        float oxMax = otherBox.getxMax();
+        float oxMin = otherBox.getxMin();
+        float oyMax = otherBox.getyMax();
+        float oyMin = otherBox.getyMin();
+        float ozMax = otherBox.getzMax();
+        float ozMin = otherBox.getzMin();
+        boolean xBound = xMin <= oxMax && oxMax <= xMax || xMin <= oxMin && oxMin <= xMax;
+        boolean yBound = yMin <= oyMax && oyMax <= yMax || yMin <= oyMin && oyMin <= yMax;
+        boolean zBound = zMin <= ozMax && ozMax <= zMax || zMin <= ozMin && ozMin <= zMax;
+
+        return xBound && yBound && zBound;
     }
 
     public float getxMax() {
