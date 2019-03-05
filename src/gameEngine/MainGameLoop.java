@@ -7,7 +7,7 @@ import renderEngine.MainRenderer;
 import renderEngine.ModelLoader;
 import scenes.Scene;
 import scenes.TestScene1;
-import tools.MousePicker;
+import tools.editor.MousePicker;
 
 public class MainGameLoop {
 

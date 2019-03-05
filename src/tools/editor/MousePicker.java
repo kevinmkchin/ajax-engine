@@ -1,13 +1,17 @@
-package tools;
+package tools.editor;
 
 import assets.collisions.AABB;
 import assets.entities.Camera;
+import assets.entities.CollisionEntity;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.util.vector.Matrix4f;
 import org.lwjgl.util.vector.Vector2f;
 import org.lwjgl.util.vector.Vector3f;
 import org.lwjgl.util.vector.Vector4f;
+import scenes.Scene;
+import tools.Maths;
+import tools.RayCaster;
 
 public class MousePicker {
 
@@ -39,21 +43,29 @@ public class MousePicker {
     //CHECK IF MOUSE RAY HIT A BOUNDING BOX
     //Iterate through increasing lengths of currentRay direction vector
     //if an iteration of a ray has its end point inside a bounding box, return true
-    public boolean isRayHittingBox(AABB box){
-        Vector3f checkPoint;
+    public boolean isMouseRayHittingBox(AABB box){
+        RayCaster rayCaster = new RayCaster();
+        return rayCaster.rayCastHit(origin, currentRay, RAY_RANGE, box);
+    }
 
-        for(int i = 1; i < RAY_RANGE; i++) {
-            checkPoint = new Vector3f();
-            Vector3f checkRay = new Vector3f(currentRay.x, currentRay.y, currentRay.z);
-            checkRay.scale((float) i / 2);
-            Vector3f.add(origin, checkRay, checkPoint);
-
-            if(box.isPointColliding(checkPoint)){
-                return true;
+    //Return reference to entity clicked on
+    public CollisionEntity mouseRayEntity(){
+        while(Mouse.next()) {
+            if (Mouse.getEventButton() == 0 && Mouse.getEventButtonState()) {
+                //System.out.println(Scene.boundingBoxes);
+                for(AABB box : Scene.boundingBoxes){
+                    if(isMouseRayHittingBox(box)){
+                        System.out.println("Selected Entity HashCode: " + box.getEntity().hashCode());
+                        return box.getEntity();
+                    }
+                }
             }
         }
-        return false;
+        return null;
     }
+
+
+
 
     private Vector3f calculateRayCast(){
         float mouseX = Mouse.getX();
