@@ -1,6 +1,7 @@
 package renderEngine;
 
 import org.lwjgl.LWJGLException;
+import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.*;
 
 public class DisplayManager {
@@ -20,6 +21,8 @@ public class DisplayManager {
             Display.setDisplayMode(new DisplayMode(WIDTH, HEIGHT));
             Display.create(new PixelFormat(), attribs);
             Display.setTitle("Ajax Game");
+
+            Mouse.create();
         } catch (LWJGLException e) {
             e.printStackTrace();
         }
@@ -36,7 +39,15 @@ public class DisplayManager {
     }
 
     public static void closeDisplay(){
+        Mouse.destroy();
         Display.destroy();
+    }
+
+    public static void disableCursor(){
+        Mouse.setGrabbed(true);
+    }
+    public static void enableCursor(){
+        Mouse.setGrabbed(false);
     }
 
 }
