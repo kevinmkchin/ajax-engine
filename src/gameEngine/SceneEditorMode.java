@@ -18,7 +18,7 @@ public class SceneEditorMode {
 
     JFrame frame;
     JPanel panel1;
-    static JTextField textField1;
+    static TextArea textArea1;
     private static final int WIDTH = 300;
     private static final int HEIGHT = 800;
     private Color bgColor = Color.BLACK;
@@ -38,13 +38,13 @@ public class SceneEditorMode {
         panel1 = new JPanel();
         panel1.setLayout(new BorderLayout());
 
-        textField1 = new JTextField();
-        textField1.setBackground(bgColor);
-        textField1.setForeground(fgColor);
-        textField1.setFont(font1);
-        textField1.setText("info goes here");
+        textArea1 = new TextArea();
+        textArea1.setBackground(bgColor);
+        textArea1.setForeground(fgColor);
+        textArea1.setFont(font1);
+        textArea1.setText("info goes here");
 
-        panel1.add(textField1);
+        panel1.add(textArea1);
 
         frame = new JFrame();
         frame.setSize(WIDTH, HEIGHT);
@@ -79,8 +79,12 @@ public class SceneEditorMode {
             tempEntity = picker.mouseRayEntity();
             if(tempEntity != null){
                 selectionHandler.setSelectedEntity(tempEntity);
-                textField1.setText("code " + selectionHandler.getSelectedEntity().hashCode());
+                textArea1.setText("code " + selectionHandler.getSelectedEntity().hashCode());
             }
+            if (selectionHandler.getSelectedEntity() != null) {
+                selectionHandler.updateEntity();
+            }
+            updateEditor(selectionHandler);
             //gui update
 
 
@@ -93,6 +97,12 @@ public class SceneEditorMode {
         mainRenderer.cleanUp();
         loader.cleanMemory();
         DisplayManager.closeDisplay();
+    }
+
+    private static void updateEditor(SelectionHandler selectionHandler){
+        if(selectionHandler.getSelectedEntity() != null) {
+            textArea1.setText(selectionHandler.getSelectedEntity().getPosition().toString());
+        }
     }
 
 
