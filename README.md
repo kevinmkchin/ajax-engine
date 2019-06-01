@@ -1,4 +1,12 @@
 # Ajax Engine
+
+Learned about:
+- Collisions in 3D (axis-aligned bounding boxes)
+- Matrices (transformation matrices, view matrices)
+- Working with OpenGL shaders
+- Vectors
+- Vertex buffer objects, vertex array objects
+
 #### Entity-based OpenGL 3D graphics engine written in Java
 ---
 ## Engine Modes
