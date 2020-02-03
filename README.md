@@ -1,4 +1,6 @@
 # Ajax Engine
+Ajax is just the name! Did not use Asynchronous JavaScript and XML.
+![stanford dragon](https://imgur.com/a/zXCpjIr)
 
 Learned about:
 - Collisions in 3D (axis-aligned bounding boxes)
