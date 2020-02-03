@@ -1,6 +1,9 @@
 # Ajax Engine
 Ajax is just the name! Did not use Asynchronous JavaScript and XML.
+
+Stanford Dragon 3D Model in the Ajax Engine:
 ![stanford dragon](https://imgur.com/7KPh8q4.png)
+
 
 Learned about:
 - Collisions in 3D (axis-aligned bounding boxes)
