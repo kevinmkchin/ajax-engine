@@ -1,6 +1,8 @@
 # Ajax Engine
 Ajax is just the name! Did not use Asynchronous JavaScript and XML.
 
+[Download Demo](https://github.com/kevinmkchin/kevinmkchin.github.io/blob/master/ajax3d/ajax3d%20engine.zip?raw=true)
+
 Stanford Dragon 3D Model in the Ajax Engine:
 ![stanford dragon](https://imgur.com/7KPh8q4.png)
 
@@ -105,7 +107,3 @@ How to enable ABBB for entities:
 Store data for items inside an Excel sheet and assign each item a unique ID.
 
 ##### Make creating lots of content and data at once easy.
-
-
-
-
