@@ -3,6 +3,8 @@ Ajax is just the name! Did not use Asynchronous JavaScript and XML.
 
 [Download Demo](https://github.com/kevinmkchin/kevinmkchin.github.io/blob/master/ajax3d/ajax3d%20engine.zip?raw=true)
 
+![](https://github.com/kevinmkchin/kevinmkchin.github.io/blob/master/ajax3d/ajax.gif?raw=true)
+
 Stanford Dragon 3D Model in the Ajax Engine:
 ![stanford dragon](https://imgur.com/7KPh8q4.png)
 
